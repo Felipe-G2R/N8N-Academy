@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N8N Academy - Domine a Automação Inteligente</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-project-diagram"></i>
+                <span>N8N Academy</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#hero" class="nav-link">Início</a></li>
+                <li><a href="#architecture" class="nav-link">Arquitetura</a></li>
+                <li><a href="#programming" class="nav-link">Programação</a></li>
+                <li><a href="fundamentos.html" class="nav-link">Fundamentos</a></li>
+                <li><a href="#ai-agents" class="nav-link">Agentes IA</a></li>
+                <li><a href="#interactive" class="nav-link">Playground</a></li>
+                <li><a href="#resources" class="nav-link">Recursos</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="gradient-text">Domine N8N</span>
+                    <br>Construa Agentes de IA Poderosos
+                </h1>
+                <p class="hero-subtitle">
+                    Aprenda a arquitetura, programação e melhores práticas para criar automações inteligentes de nível empresarial
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('interactive')">
+                        <i class="fas fa-play"></i> Começar Agora
+                    </button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('architecture')">
+                        <i class="fas fa-book"></i> Explorar Conceitos
+                    </button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">400+</span>
+                        <span class="stat-label">Nodes Integrados</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Produtividade</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">∞</span>
+                        <span class="stat-label">Possibilidades</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="workflow-preview">
+                    <div class="node-demo trigger">
+                        <i class="fas fa-bolt"></i>
+                        <span>Trigger</span>
+                    </div>
+                    <div class="connection-line"></div>
+                    <div class="node-demo ai">
+                        <i class="fas fa-brain"></i>
+                        <span>AI Agent</span>
+                    </div>
+                    <div class="connection-line"></div>
+                    <div class="node-demo action">
+                        <i class="fas fa-cog"></i>
+                        <span>Action</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section id="architecture" class="section architecture-section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-sitemap"></i>
+                Arquitetura Fundamental do N8N
+            </h2>
+            <p class="section-subtitle">
+                Compreenda os blocos de construção que formam a base de toda automação
+            </p>
+
+            <div class="architecture-grid">
+                <!-- Workflows Card -->
+                <div class="arch-card" data-aos="fade-up">
+                    <div class="arch-icon">
+                        <i class="fas fa-stream"></i>
+                    </div>
+                    <h3>Workflows</h3>
+                    <p>Sequências lógicas e visuais de operações que automatizam processos do início ao fim</p>
+                    <button class="learn-more" onclick="openModal('workflows')">
+                        Explorar <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Nodes Card -->
+                <div class="arch-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="arch-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>Nodes</h3>
+                    <p>Blocos modulares que executam tarefas específicas: triggers, actions e transformações</p>
+                    <button class="learn-more" onclick="openModal('nodes')">
+                        Explorar <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Data Flow Card -->
+                <div class="arch-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="arch-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3>Fluxo de Dados</h3>
+                    <p>Modelo baseado em itens JSON que fluem através dos nodes com transformações graduais</p>
+                    <button class="learn-more" onclick="openModal('dataflow')">
+                        Explorar <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Connections Card -->
+                <div class="arch-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="arch-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3>Conexões</h3>
+                    <p>Fios que tecem a automação, definindo o caminho e a lógica de processamento</p>
+                    <button class="learn-more" onclick="openModal('connections')">
+                        Explorar <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Interactive Node Types -->
+            <div class="node-types-showcase">
+                <h3 class="showcase-title">Tipos de Nodes</h3>
+                <div class="node-types-container">
+                    <div class="node-type trigger-type" onclick="highlightNodeType('trigger')">
+                        <div class="node-type-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h4>Trigger Nodes</h4>
+                        <p>Iniciam workflows baseados em eventos</p>
+                        <ul class="node-examples">
+                            <li><i class="fas fa-envelope"></i> Email Trigger</li>
+                            <li><i class="fas fa-clock"></i> Schedule Trigger</li>
+                            <li><i class="fas fa-globe"></i> Webhook</li>
+                        </ul>
+                    </div>
+
+                    <div class="node-type action-type" onclick="highlightNodeType('action')">
+                        <div class="node-type-icon">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <h4>Action Nodes</h4>
+                        <p>Executam operações e interações</p>
+                        <ul class="node-examples">
+                            <li><i class="fab fa-google"></i> Google Sheets</li>
+                            <li><i class="fas fa-database"></i> Database</li>
+                            <li><i class="fas fa-paper-plane"></i> Send Email</li>
+                        </ul>
+                    </div>
+
+                    <div class="node-type control-type" onclick="highlightNodeType('control')">
+                        <div class="node-type-icon">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <h4>Control Nodes</h4>
+                        <p>Gerenciam lógica e fluxo</p>
+                        <ul class="node-examples">
+                            <li><i class="fas fa-question"></i> IF Condition</li>
+                            <li><i class="fas fa-sync"></i> Loop</li>
+                            <li><i class="fas fa-object-group"></i> Merge</li>
+                        </ul>
+                    </div>
+
+                    <div class="node-type ai-type" onclick="highlightNodeType('ai')">
+                        <div class="node-type-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h4>AI Nodes</h4>
+                        <p>Integram inteligência artificial</p>
+                        <ul class="node-examples">
+                            <li><i class="fas fa-robot"></i> AI Agent</li>
+                            <li><i class="fas fa-comment"></i> OpenAI</li>
+                            <li><i class="fas fa-microchip"></i> LLM Models</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programming Skills Section -->
+    <section id="programming" class="section programming-section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-code"></i>
+                Habilidades de Programação
+            </h2>
+            <p class="section-subtitle">
+                O conjunto de competências técnicas para dominar 100% do N8N
+            </p>
+
+            <!-- Featured Fundamentals Card -->
+            <div class="fundamentals-banner" data-aos="zoom-in">
+                <div class="fundamentals-banner-content">
+                    <div class="banner-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div class="banner-text">
+                        <h3>Fundamentos de Programação no N8N</h3>
+                        <p>Domine JavaScript, JSON e HTTP/APIs - O guia completo para alcançar produtividade de 100%</p>
+                    </div>
+                    <a href="fundamentos.html" class="banner-button">
+                        Explorar Guia Completo <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="skills-container">
+                <!-- JavaScript/TypeScript -->
+                <div class="skill-card javascript-card" data-aos="fade-right">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i class="fab fa-js"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h3>JavaScript & TypeScript</h3>
+                            <div class="importance-badge critical">ESSENCIAL</div>
+                        </div>
+                    </div>
+                    <p class="skill-description">
+                        A espinha dorsal do N8N. Use no Code Node para lógica customizada e TypeScript para criar Custom Nodes.
+                    </p>
+                    <div class="skill-features">
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Code Node para transformações</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Manipulação de objetos e arrays</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Async/await para operações</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Custom Nodes em TypeScript</span>
+                        </div>
+                    </div>
+                    <div class="code-example">
+                        <pre><code class="language-javascript">// Exemplo Code Node
+const items = $input.all();
+return items.map(item => ({
+  json: {
+    ...item.json,
+    processed: true,
+    timestamp: new Date().toISOString()
+  }
+}));</code></pre>
+                    </div>
+                </div>
+
+                <!-- JSON -->
+                <div class="skill-card json-card" data-aos="fade-right" data-aos-delay="100">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i class="fas fa-brackets-curly"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h3>JSON</h3>
+                            <div class="importance-badge critical">ESSENCIAL</div>
+                        </div>
+                    </div>
+                    <p class="skill-description">
+                        A língua franca do N8N. Todo dado flui como objetos JSON através dos workflows.
+                    </p>
+                    <div class="skill-features">
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Estrutura de dados padrão</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Navegação em objetos aninhados</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Mapeamento de campos</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>API payloads e responses</span>
+                        </div>
+                    </div>
+                    <div class="code-example">
+                        <pre><code class="language-json">{
+  "user": {
+    "name": "Alice",
+    "email": "alice@example.com"
+  },
+  "action": "process_data",
+  "metadata": {
+    "timestamp": "2025-01-15T10:30:00Z"
+  }
+}</code></pre>
+                    </div>
+                </div>
+
+                <!-- HTTP/APIs -->
+                <div class="skill-card http-card" data-aos="fade-right" data-aos-delay="200">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h3>HTTP & APIs</h3>
+                            <div class="importance-badge high">MUITO IMPORTANTE</div>
+                        </div>
+                    </div>
+                    <p class="skill-description">
+                        Para conectar seu agente ao mundo. Domine REST APIs, autenticação e HTTP Request Node.
+                    </p>
+                    <div class="skill-features">
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Métodos HTTP (GET, POST, PUT, DELETE)</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Headers e autenticação</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Request/Response bodies</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Status codes e error handling</span>
+                        </div>
+                    </div>
+                    <div class="code-example">
+                        <pre><code class="language-http">POST /api/v1/data
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "query": "search term",
+  "limit": 10
+}</code></pre>
+                    </div>
+                </div>
+
+                <!-- Python -->
+                <div class="skill-card python-card" data-aos="fade-right" data-aos-delay="300">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h3>Python</h3>
+                            <div class="importance-badge medium">COMPLEMENTAR</div>
+                        </div>
+                    </div>
+                    <p class="skill-description">
+                        Para IA avançada e ciência de dados. Integre LangChain, RAG e modelos especializados.
+                    </p>
+                    <div class="skill-features">
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>LangChain & LlamaIndex</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Machine Learning libraries</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Vector databases</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Flask/FastAPI para microserviços</span>
+                        </div>
+                    </div>
+                    <div class="code-example">
+                        <pre><code class="language-python"># Integração Python + N8N
+from langchain import VectorStore
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.post("/search")
+async def search(query: str):
+    results = vector_store.search(query)
+    return {"results": results}</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Progress Tracker -->
+            <div class="skills-tracker">
+                <h3>Seu Progresso de Aprendizado</h3>
+                <div class="skill-progress">
+                    <div class="progress-item">
+                        <span class="progress-label">JavaScript/TypeScript</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-skill="javascript" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-percent">0%</span>
+                    </div>
+                    <div class="progress-item">
+                        <span class="progress-label">JSON</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-skill="json" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-percent">0%</span>
+                    </div>
+                    <div class="progress-item">
+                        <span class="progress-label">HTTP & APIs</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-skill="http" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-percent">0%</span>
+                    </div>
+                    <div class="progress-item">
+                        <span class="progress-label">Python</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-skill="python" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-percent">0%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Agents Section -->
+    <section id="ai-agents" class="section ai-agents-section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-robot"></i>
+                Construindo Agentes de IA
+            </h2>
+            <p class="section-subtitle">
+                Da teoria à prática: arquitetura e implementação de agentes inteligentes
+            </p>
+
+            <!-- Agent Architecture -->
+            <div class="agent-architecture">
+                <h3 class="arch-subtitle">Os 4 Pilares de um Agente de IA</h3>
+                <div class="pillars-grid">
+                    <div class="pillar perception" data-aos="zoom-in">
+                        <div class="pillar-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h4>Percepção</h4>
+                        <p>Coleta informações do ambiente através de triggers e dados externos</p>
+                        <div class="pillar-examples">
+                            <span class="tag"><i class="fas fa-bolt"></i> Chat Trigger</span>
+                            <span class="tag"><i class="fas fa-globe"></i> Webhook</span>
+                            <span class="tag"><i class="fas fa-database"></i> Database</span>
+                        </div>
+                    </div>
+
+                    <div class="pillar decision" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="pillar-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h4>Decisão</h4>
+                        <p>LLMs analisam dados e decidem as próximas ações baseadas no system prompt</p>
+                        <div class="pillar-examples">
+                            <span class="tag"><i class="fas fa-robot"></i> GPT-4</span>
+                            <span class="tag"><i class="fas fa-comment"></i> Claude</span>
+                            <span class="tag"><i class="fas fa-star"></i> Gemini</span>
+                        </div>
+                    </div>
+
+                    <div class="pillar action" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="pillar-icon">
+                            <i class="fas fa-hand-rock"></i>
+                        </div>
+                        <h4>Ação</h4>
+                        <p>Executa tarefas no mundo através de ferramentas e APIs</p>
+                        <div class="pillar-examples">
+                            <span class="tag"><i class="fas fa-search"></i> Web Scraping</span>
+                            <span class="tag"><i class="fas fa-envelope"></i> Email</span>
+                            <span class="tag"><i class="fas fa-table"></i> Sheets</span>
+                        </div>
+                    </div>
+
+                    <div class="pillar memory" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="pillar-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h4>Memória</h4>
+                        <p>Mantém contexto e aprende com interações passadas</p>
+                        <div class="pillar-examples">
+                            <span class="tag"><i class="fas fa-history"></i> Chat History</span>
+                            <span class="tag"><i class="fas fa-vector-square"></i> Vector DB</span>
+                            <span class="tag"><i class="fas fa-book"></i> RAG</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Agent Flow Visualization -->
+            <div class="agent-flow-viz">
+                <h3 class="arch-subtitle">Ciclo de Execução do Agente</h3>
+                <div class="flow-diagram">
+                    <div class="flow-step step-1" onclick="animateAgentFlow(1)">
+                        <div class="step-number">1</div>
+                        <i class="fas fa-play-circle"></i>
+                        <h4>Trigger</h4>
+                        <p>Usuário envia mensagem</p>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step step-2" onclick="animateAgentFlow(2)">
+                        <div class="step-number">2</div>
+                        <i class="fas fa-brain"></i>
+                        <h4>LLM Analisa</h4>
+                        <p>Processa com system prompt</p>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step step-3" onclick="animateAgentFlow(3)">
+                        <div class="step-number">3</div>
+                        <i class="fas fa-tools"></i>
+                        <h4>Decide Ferramenta</h4>
+                        <p>Escolhe ação necessária</p>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step step-4" onclick="animateAgentFlow(4)">
+                        <div class="step-number">4</div>
+                        <i class="fas fa-cog"></i>
+                        <h4>Executa Ação</h4>
+                        <p>Node de ferramenta atua</p>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step step-5" onclick="animateAgentFlow(5)">
+                        <div class="step-number">5</div>
+                        <i class="fas fa-reply"></i>
+                        <h4>Responde</h4>
+                        <p>Retorna resultado ao usuário</p>
+                    </div>
+                </div>
+                <button class="btn btn-primary animate-flow-btn" onclick="animateAgentFlow('all')">
+                    <i class="fas fa-play"></i> Ver Animação Completa
+                </button>
+            </div>
+
+            <!-- Best Practices -->
+            <div class="best-practices">
+                <h3 class="arch-subtitle">Práticas para Produção</h3>
+                <div class="practices-grid">
+                    <div class="practice-card" data-aos="fade-up">
+                        <div class="practice-icon error">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h4>Tratamento de Erros</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Use Error Trigger nodes</li>
+                            <li><i class="fas fa-check-circle"></i> Implemente retry logic</li>
+                            <li><i class="fas fa-check-circle"></i> Valide respostas de APIs</li>
+                            <li><i class="fas fa-check-circle"></i> Notifique falhas críticas</li>
+                        </ul>
+                    </div>
+
+                    <div class="practice-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="practice-icon observability">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Observabilidade</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Use Debug Helper nodes</li>
+                            <li><i class="fas fa-check-circle"></i> Configure log streaming</li>
+                            <li><i class="fas fa-check-circle"></i> Monitore executions dashboard</li>
+                            <li><i class="fas fa-check-circle"></i> Track performance metrics</li>
+                        </ul>
+                    </div>
+
+                    <div class="practice-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="practice-icon version">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <h4>Controle de Versão</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Integre com Git</li>
+                            <li><i class="fas fa-check-circle"></i> Use ambientes separados</li>
+                            <li><i class="fas fa-check-circle"></i> Documente mudanças</li>
+                            <li><i class="fas fa-check-circle"></i> Teste antes de deploy</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Playground -->
+    <section id="interactive" class="section interactive-section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-flask"></i>
+                Playground Interativo
+            </h2>
+            <p class="section-subtitle">
+                Construa seu primeiro workflow visualmente
+            </p>
+
+            <div class="playground-container">
+                <div class="playground-sidebar">
+                    <h3>Nodes Disponíveis</h3>
+                    <div class="node-palette">
+                        <div class="palette-category">
+                            <h4><i class="fas fa-bolt"></i> Triggers</h4>
+                            <div class="draggable-node" draggable="true" data-node-type="trigger" data-node-name="Chat Trigger">
+                                <i class="fas fa-comments"></i>
+                                <span>Chat Trigger</span>
+                            </div>
+                            <div class="draggable-node" draggable="true" data-node-type="trigger" data-node-name="Webhook">
+                                <i class="fas fa-globe"></i>
+                                <span>Webhook</span>
+                            </div>
+                        </div>
+
+                        <div class="palette-category">
+                            <h4><i class="fas fa-brain"></i> AI</h4>
+                            <div class="draggable-node" draggable="true" data-node-type="ai" data-node-name="AI Agent">
+                                <i class="fas fa-robot"></i>
+                                <span>AI Agent</span>
+                            </div>
+                            <div class="draggable-node" draggable="true" data-node-type="ai" data-node-name="OpenAI">
+                                <i class="fas fa-comment"></i>
+                                <span>OpenAI</span>
+                            </div>
+                        </div>
+
+                        <div class="palette-category">
+                            <h4><i class="fas fa-cog"></i> Actions</h4>
+                            <div class="draggable-node" draggable="true" data-node-type="action" data-node-name="HTTP Request">
+                                <i class="fas fa-network-wired"></i>
+                                <span>HTTP Request</span>
+                            </div>
+                            <div class="draggable-node" draggable="true" data-node-type="action" data-node-name="Email">
+                                <i class="fas fa-envelope"></i>
+                                <span>Send Email</span>
+                            </div>
+                            <div class="draggable-node" draggable="true" data-node-type="action" data-node-name="Google Sheets">
+                                <i class="fab fa-google"></i>
+                                <span>Google Sheets</span>
+                            </div>
+                        </div>
+
+                        <div class="palette-category">
+                            <h4><i class="fas fa-code-branch"></i> Control</h4>
+                            <div class="draggable-node" draggable="true" data-node-type="control" data-node-name="IF">
+                                <i class="fas fa-question"></i>
+                                <span>IF Condition</span>
+                            </div>
+                            <div class="draggable-node" draggable="true" data-node-type="control" data-node-name="Loop">
+                                <i class="fas fa-sync"></i>
+                                <span>Loop</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="playground-canvas-container">
+                    <div class="canvas-toolbar">
+                        <button class="toolbar-btn" onclick="clearCanvas()">
+                            <i class="fas fa-trash"></i> Limpar
+                        </button>
+                        <button class="toolbar-btn" onclick="runWorkflow()">
+                            <i class="fas fa-play"></i> Executar
+                        </button>
+                        <button class="toolbar-btn" onclick="exportWorkflow()">
+                            <i class="fas fa-download"></i> Exportar
+                        </button>
+                        <button class="toolbar-btn" onclick="showWorkflowCode()">
+                            <i class="fas fa-code"></i> Ver JSON
+                        </button>
+                    </div>
+                    <canvas id="workflowCanvas" class="workflow-canvas"></canvas>
+                    <div class="canvas-help">
+                        <i class="fas fa-info-circle"></i>
+                        Arraste nodes da barra lateral para o canvas e conecte-os clicando
+                    </div>
+                </div>
+
+                <div class="playground-output">
+                    <h3>Console de Execução</h3>
+                    <div id="executionConsole" class="execution-console">
+                        <div class="console-welcome">
+                            <i class="fas fa-terminal"></i>
+                            <p>Pronto para executar workflows...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="section resources-section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-graduation-cap"></i>
+                Recursos de Aprendizado
+            </h2>
+
+            <div class="resources-grid">
+                <!-- Video Tutorials -->
+                <div class="resource-card video-card" data-aos="fade-up">
+                    <div class="resource-header">
+                        <i class="fas fa-video"></i>
+                        <h3>Tutoriais em Vídeo</h3>
+                    </div>
+                    <div class="video-container">
+                        <iframe
+                            src="https://www.youtube.com/embed/1yZq4uEtm-k"
+                            title="N8N Tutorial"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <p>Assista tutoriais práticos sobre automação com N8N</p>
+                </div>
+
+                <!-- Documentation -->
+                <div class="resource-card docs-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="resource-header">
+                        <i class="fas fa-book"></i>
+                        <h3>Documentação Oficial</h3>
+                    </div>
+                    <ul class="resource-links">
+                        <li>
+                            <a href="https://docs.n8n.io/workflows" target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                                Workflows Guide
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://docs.n8n.io/courses/level-two/chapter-1" target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                                Data Structure Course
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://docs.n8n.io/advanced-ai/intro-tutorial" target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                                AI Workflow Tutorial
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://blog.n8n.io/how-to-build-ai-agent" target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                                Building AI Agents
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Community -->
+                <div class="resource-card community-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="resource-header">
+                        <i class="fas fa-users"></i>
+                        <h3>Comunidade</h3>
+                    </div>
+                    <ul class="resource-links">
+                        <li>
+                            <a href="https://community.n8n.io" target="_blank">
+                                <i class="fas fa-comments"></i>
+                                Fórum da Comunidade
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/n8n-io/n8n" target="_blank">
+                                <i class="fab fa-github"></i>
+                                GitHub Repository
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.codecademy.com/article/build-ai-workflows-with-n8n" target="_blank">
+                                <i class="fas fa-graduation-cap"></i>
+                                Codecademy Course
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Quick Reference -->
+                <div class="resource-card reference-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="resource-header">
+                        <i class="fas fa-bookmark"></i>
+                        <h3>Referência Rápida</h3>
+                    </div>
+                    <div class="quick-reference">
+                        <div class="ref-item">
+                            <strong>Expressões:</strong>
+                            <code>{{$json["campo"]}}</code>
+                        </div>
+                        <div class="ref-item">
+                            <strong>All Items:</strong>
+                            <code>$input.all()</code>
+                        </div>
+                        <div class="ref-item">
+                            <strong>Environment:</strong>
+                            <code>{{$env.VARIABLE}}</code>
+                        </div>
+                        <div class="ref-item">
+                            <strong>DateTime:</strong>
+                            <code>{{$now}}</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Workflow Templates -->
+            <div class="templates-showcase">
+                <h3 class="showcase-title">Templates Prontos para Usar</h3>
+                <div class="templates-grid">
+                    <div class="template-card" onclick="loadTemplate('ai-assistant')">
+                        <div class="template-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h4>AI Assistant</h4>
+                        <p>Assistente com RAG e ferramentas</p>
+                        <span class="template-badge">Popular</span>
+                    </div>
+                    <div class="template-card" onclick="loadTemplate('web-scraper')">
+                        <div class="template-icon">
+                            <i class="fas fa-spider"></i>
+                        </div>
+                        <h4>Web Scraper</h4>
+                        <p>Coleta automatizada de dados</p>
+                        <span class="template-badge">Útil</span>
+                    </div>
+                    <div class="template-card" onclick="loadTemplate('email-automation')">
+                        <div class="template-icon">
+                            <i class="fas fa-envelope-open-text"></i>
+                        </div>
+                        <h4>Email Automation</h4>
+                        <p>Processamento inteligente de emails</p>
+                        <span class="template-badge">Novo</span>
+                    </div>
+                    <div class="template-card" onclick="loadTemplate('data-sync')">
+                        <div class="template-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h4>Data Sync</h4>
+                        <p>Sincronização entre plataformas</p>
+                        <span class="template-badge">Essencial</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-project-diagram"></i> N8N Academy</h3>
+                    <p>Domine a automação inteligente e construa agentes de IA de nível empresarial</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="#hero">Início</a></li>
+                        <li><a href="#architecture">Arquitetura</a></li>
+                        <li><a href="#programming">Programação</a></li>
+                        <li><a href="fundamentos.html"><i class="fas fa-book-open"></i> Fundamentos</a></li>
+                        <li><a href="#ai-agents">Agentes IA</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="https://docs.n8n.io" target="_blank">Documentação</a></li>
+                        <li><a href="https://community.n8n.io" target="_blank">Comunidade</a></li>
+                        <li><a href="#interactive">Playground</a></li>
+                        <li><a href="#resources">Tutoriais</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> contact@n8nacademy.dev</li>
+                        <li><i class="fas fa-globe"></i> n8nacademy.dev</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 N8N Academy. Educação interativa para automação inteligente.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for detailed content -->
+    <div id="contentModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
